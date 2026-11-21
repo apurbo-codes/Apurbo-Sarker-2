@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Poppins", "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --color-obsidian: #0A0A0A;
+  --color-charcoal: #111111;
+  --color-accent: #FF7A00;
+  --color-accent-warm: #FF9A2E;
+}
+
+@layer base {
+  html {
+    background-color: #0A0A0A;
+    color: #ffffff;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: #0A0A0A;
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Custom subtle orange hairline divider used in section kickers */
+.section-kicker-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 122, 0, 0.85) 50%, transparent 100%);
+}
+
+.section-kicker-line-left {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 122, 0, 0.9) 0%, transparent 100%);
+}
+
+/* Subtle orange dot matrix pattern for portfolio header corners */
+.orange-dot-pattern {
+  background-image: radial-gradient(rgba(255, 122, 0, 0.38) 1.4px, transparent 1.4px);
+  background-size: 12px 12px;
+}
+
+/* Mobile portrait bottom fade */
+.hero-portrait-mask-mobile {
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.92) 22%, black 42%, black 100%);
+  mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.92) 22%, black 42%, black 100%);
+}
+
+/* Tablet & Desktop portrait smooth left & bottom edge-blending mask */
+@media (min-width: 768px) {
+  .hero-portrait-mask-mobile {
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.78) 20%, black 40%, black 94%, transparent 100%),
+      linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.9) 16%, black 34%, black 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.78) 20%, black 40%, black 94%, transparent 100%),
+      linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.9) 16%, black 34%, black 100%);
+    mask-composite: intersect;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

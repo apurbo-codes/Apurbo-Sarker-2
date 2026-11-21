@@ -1,0 +1,11 @@
+<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="40" height="40" rx="10" fill="#0A0A0A" />
+  <defs>
+    <linearGradient id="apurboFavGrad" x1="4" y1="4" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF9A2E" />
+      <stop offset="100%" stop-color="#FF7A00" />
+    </linearGradient>
+  </defs>
+  <path d="M20 7L33 32H26.4L20 18.6L13.6 32H7L20 7Z" fill="url(#apurboFavGrad)" />
+  <path d="M15.4 25.5H24.6L22.6 29.5H17.4L15.4 25.5Z" fill="#FFFFFF" fill-opacity="0.92" />
+</svg>
